@@ -1,0 +1,140 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis CSS (cores reutilizáveis) */
+:root {
+  --cor-primaria: #6366f1;
+  --cor-secundaria: #8b5cf6;
+  --cor-fundo: #0f172a;
+  --cor-texto: #e2e8f0;
+  --cor-card: #1e293b;
+  --espacamento: 1rem;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--cor-fundo) 0%, #1e293b 100%);
+  color: var(--cor-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: var(--cor-card);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--cor-primaria);
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: #94a3b8;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Card */
+.card {
+  background-color: var(--cor-card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+}
+
+.card h2 {
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Botão */
+button {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Resultado */
+#resultado {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--cor-primaria);
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: var(--cor-card);
+  padding: 1.5rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE - Media Queries */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .card h2 {
+    font-size: 1.25rem;
+  }
+}
