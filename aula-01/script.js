@@ -1,19 +1,31 @@
-// 1. Log no console (mensagem para desenvolvedores)
 console.log('🎉 JavaScript está funcionando!');
 
-// 2. Selecionar elementos do HTML
 const botao = document.getElementById('botao-magico');
 const resultado = document.getElementById('resultado');
+const botaoReset = document.getElementById('botao-reset');
 
-// 3. Variáveis (guardam informações)
 let contador = 0;
 
-// 4. Função (bloco de código reutilizável)
 function cliqueNoBotao() {
-  contador = contador + 1; // Incrementa o contador
-  resultado.textContent = `Você clicou ${contador} vez(es)! 🎊`;
+  contador++;
+  if (contador >= 10) {
+    resultado.textContent = `Você clicou ${contador} vez(es), Excelente!`
+    botao.classList.add('pulsando');
+  }
+  else if (contador > 5) {
+    resultado.textContent = `Você clicou ${contador} vez(es), Você está indo bem!`
+  }
+  else {
+    resultado.textContent = `Você clicou ${contador} vez(es), Clique mais!`
+  }
   console.log('Botão clicado! Contador:', contador);
 }
 
-// 5. Event Listener (escuta eventos do usuário)
+function resetarComando() {
+  contador = 0;
+  resultado.textContent = 'Contador reiniciado';
+  console.log('Contador resetado para 0');
+}
+
 botao.addEventListener('click', cliqueNoBotao);
+botaoReset.addEventListener('click', resetarComando);

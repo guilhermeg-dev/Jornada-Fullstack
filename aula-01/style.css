@@ -7,9 +7,9 @@
 
 /* Variáveis CSS (cores reutilizáveis) */
 :root {
-  --cor-primaria: #6366f1;
-  --cor-secundaria: #8b5cf6;
-  --cor-fundo: #0f172a;
+  --cor-primaria: #00ff22;
+  --cor-secundaria: #42b65b;
+  --cor-fundo: #000000;
   --cor-texto: #e2e8f0;
   --cor-card: #1e293b;
   --espacamento: 1rem;
@@ -99,6 +99,19 @@ button:active {
   font-size: 1.2rem;
   color: var(--cor-primaria);
   font-weight: bold;
+}
+
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulsando {
+  animation: pulsar 0.5s infinite;
 }
 
 /* Footer */
